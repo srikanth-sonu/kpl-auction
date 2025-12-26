@@ -62,15 +62,16 @@ function App() {
         <br /><br />
 
         <button
-          onClick={() => {
-            localStorage.setItem("admin_logged", "true");
-            localStorage.setItem("admin_user", username);
-            localStorage.setItem("admin_pass", password);
-            setLoggedIn(true);
-          }}
-        >
-          Login
-        </button>
+  onClick={() => {
+    localStorage.setItem("admin_logged", "true");
+    localStorage.setItem("admin_user", username);
+    localStorage.setItem("admin_pass", password);
+    window.location.reload();
+  }}
+>
+  Login
+</button>
+
       </div>
     );
   }
@@ -114,13 +115,14 @@ function App() {
       <h1>KPL Auction – Admin Panel</h1>
 
       <button
-        onClick={() => {
-          localStorage.clear();
-          setLoggedIn(false);
-        }}
-      >
-        Logout
-      </button>
+  onClick={() => {
+    localStorage.clear();
+    window.location.reload();
+  }}
+>
+  Logout
+</button>
+
 
       <hr />
 
