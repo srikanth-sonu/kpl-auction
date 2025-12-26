@@ -1,6 +1,13 @@
+const adminAuth = require("../middleware/adminAuth");
 const express = require("express");
 const router = express.Router();
 const db = require("../db");
+
+router.post("/", adminAuth, createAuction);
+router.post("/:auctionId/start", adminAuth, startAuction);
+router.post("/:auctionId/set-player", adminAuth, setPlayer);
+router.post("/:auctionId/bid", adminAuth, placeBid);
+router.post("/:auctionId/sell", adminAuth, sellPlayer);
 
 /**
  * Create a new auction
