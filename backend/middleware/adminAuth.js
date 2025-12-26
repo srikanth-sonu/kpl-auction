@@ -1,5 +1,6 @@
 module.exports = function adminAuth(req, res, next) {
-  const { username, password } = req.headers;
+  const username = req.headers.username;
+  const password = req.headers.password;
 
   if (
     username === process.env.ADMIN_USERNAME &&
